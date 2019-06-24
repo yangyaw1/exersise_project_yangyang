@@ -1,0 +1,23 @@
+<form #formRef = 'ngForm'>
+<div class = 'container'>
+  <div class = 'list-group' *ngIf = 'start'>
+      <a class = 'list-group-item' *ngFor = 'let question of test.body; let i = index;'>
+          <strong class = 'list-group-item'> Question {{question.id}}: </strong>
+          <strong class = 'list-group-item'> {{question.des}} </strong> 
+            <div *ngFor = "let chioce of question.chioces; let j = index;">
+              <input type = 'radio' name = "{{i.toString()}}" class = 'btn' 
+              [(ngModel)] = 'answer[i].value' [value]="j"> {{chioce.value}}
+            </div>
+          <div *ngIf = 'graded'> The solution is: {{question.chioces[question.solu.value].value}} </div>
+      </a>
+  </div>
+<div class = 'row'>
+        <div class = 'col-md-12'>
+            <button type = 'submit' class='btn btn-primary pull-right'
+                    (click) = 'grading()'> submit answer!  </button>
+        </div>
+</div>
+<div *ngIf = 'graded'> correct: {{correct}}, wrong: {{wrong}}, unanswered: {{unanswered}}</div>
+</div>
+</form>
+<app-chatbox></app-chatbox>

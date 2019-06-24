@@ -1,0 +1,21 @@
+<div class="chatbox border">
+  <div class = 'list-group'>
+     <div class = 'chattitle'> Discussion about the test: 
+     <br/>
+     current {{usernumber.value}} active user 
+     <br/>
+     Your id is {{userId.value}}.
+     </div>
+     <!--<div class = 'chattitle'> Discussion forum </div>-->
+     <div class = 'chatbody'> {{chatbody.body}} </div>
+     <form #formRef = 'ngForm'> 
+     <textarea name = 'chatsend' id = 'chatsend' class = 'form-control chatsend'
+              placeholder="Please enter message"
+              [(ngModel)] = "chatmessage" (keydown.shift.enter)="sendmessage()"
+              (keyup.shift)="resetmessage()"
+              (keyup.enter)="resetmessage()"
+              rows = '2'>
+     </textarea>
+     </form>
+  </div>  
+</div>

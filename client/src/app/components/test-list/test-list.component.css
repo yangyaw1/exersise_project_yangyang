@@ -1,0 +1,21 @@
+ .badge.subject {
+	padding-top: 0.6em;
+	color: #fbfdfa;
+	font-size: 12px;
+}
+ .title {
+	font-size: 1.2em;
+}
+ .subject-math {
+	background-color: #42ebf4;
+}
+ .subject-physics {
+	background-color: #92cf5c;
+}
+ .subject-english {
+    background-color: #dd0d1e;
+}
+ .subject-coding {
+	background-color: #8d16e2;
+}
+

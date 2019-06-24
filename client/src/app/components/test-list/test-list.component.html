@@ -1,0 +1,12 @@
+<div class = 'container'>
+  <app-add-test></app-add-test>
+  <div class = 'list-group'>
+      <a class = 'list-group-item' *ngFor = 'let test of tests' [routerLink]="['/tests', test.id]">
+      <!--<a class = 'list-group-item' *ngFor = 'let test of tests'>-->
+          <span class = "{{'pull-left badge subject subject-' + test.subject.toLocaleLowerCase()}}">
+              {{test.subject}}
+          </span>
+          <strong class = 'title'> {{test.id}} {{test.name}} </strong>
+      </a>
+  </div>
+</div>
